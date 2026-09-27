@@ -1,0 +1,15 @@
+<|im_start|>user
+Write one complete C# method with signature:
+public static async Task<string?> ReadFrameAsync(Stream stream, CancellationToken cancellationToken)
+It reads one frame: a 4-byte unsigned big-endian byte length, then that many UTF-8 bytes.
+Return null only for clean EOF before any prefix byte. Throw EndOfStreamException for
+EOF inside a prefix or payload. Reject lengths above 1 MiB with InvalidDataException
+before allocating the payload. Zero length returns an empty string. Reject invalid UTF-8.
+Handle partial reads and propagate cancellation. Do not dispose the caller's stream.
+Use .NET 8 APIs. Output only the method in one csharp code block, no prose or tests.
+Assume System, System.IO, System.Text, System.Threading and System.Threading.Tasks are imported.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

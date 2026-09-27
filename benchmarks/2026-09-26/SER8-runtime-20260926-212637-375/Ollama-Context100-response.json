@@ -1,0 +1,14 @@
+{
+  "model": "qwen3.8:latest",
+  "created_at": "2026-09-26T18:28:57.9568248Z",
+  "response": "BEGIN=R7M4-K2V9\nMIDDLE=T8C3-P6N1\nEND=W5H2-J9D4\n\nTimeout values alone are insufficient to establish service reliability because they only measure the maximum duration a request is allowed to wait before being aborted, not the actual performance or success rate of the service. A high timeout threshold might mask severe latency issues, while a low timeout might cause unnecessary failures even if the service is fundamentally healthy. In the provided synthetic data, timeout values increase linearly with record numbers, suggesting a systematic pattern rather than organic performance fluctuations. This deterministic progression indicates that the data is structured for reference purposes rather than reflecting real-world variability.\n\nTo accurately assess reliability, engineers require additional metrics such as success rates, error codes, and latency percentiles (p50, p95, p99). Success rates indicate how often requests complete without failure, while error codes help distinguish between client-side issues and server-side faults. Latency percentiles provide a more nuanced view of performance distribution, revealing whether most requests are fast or if a small percentage are experiencing significant delays. Additionally, monitoring resource utilization (CPU, memory, disk I/O) and network conditions can help identify bottlenecks that might not be immediately apparent from",
+  "done": true,
+  "done_reason": "length",
+  "total_duration": 102550979500,
+  "load_duration": 4031100,
+  "prompt_eval_count": 3395,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 62701719000,
+  "eval_count": 256,
+  "eval_duration": 39727533000
+}

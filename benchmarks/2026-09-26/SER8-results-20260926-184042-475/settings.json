@@ -1,0 +1,38 @@
+{
+  "Thinking": false,
+  "Seed": 42,
+  "Temperature": 0,
+  "Batch": 256,
+  "Version": "0.34.2",
+  "MaxOutput": 512,
+  "Threads": 6,
+  "Started": "2026-09-26T18:40:42.4889081+03:00",
+  "Model": "qwen3.8:latest",
+  "Context": 8192,
+  "Cases": [
+    {
+      "Name": "SQL",
+      "Drafts": [
+        0,
+        2
+      ],
+      "Prompt": "Write a detailed technical explanation of how a relational database executes\r\na SELECT query. Cover parsing, query planning, indexes, joins, sorting,\r\ntransactions, and returning results. Use several paragraphs and examples."
+    },
+    {
+      "Name": "CSharp",
+      "Drafts": [
+        2,
+        0
+      ],
+      "Prompt": "Implement a C# async method that reads one length-prefixed UTF-8 message from\r\na NetworkStream. The prefix is an unsigned 32-bit big-endian byte length.\r\nReject payloads larger than 1 MiB before allocating them. Handle partial reads,\r\nEOF before a frame, EOF inside a frame, zero-length payloads, invalid UTF-8,\r\nand cancellation. Do not dispose the caller's stream. State the method's\r\nreturn and exception contract, provide the code, and explain five edge cases."
+    },
+    {
+      "Name": "Summary",
+      "Drafts": [
+        0,
+        2
+      ],
+      "Prompt": "Summarize the following fictional incident report for an engineering review.\r\nUse four sections: timeline, confirmed cause, contributing factors, and actions.\r\nKeep facts distinct from hypotheses. Include all numerical impact figures and\r\nassignments. Explain why the proposed actions address the observed failure.\r\nDo not invent measurements or claim that an untested action is effective.\r\n\r\nAt 09:05 a cache configuration change set all product keys to expire at 09:15.\r\nAt 09:15 the request rate remained 120 requests/second, but database reads\r\nrose from 40 to 960 queries/second. Application CPU remained below 55 percent.\r\nThe connection pool reached its limit of 100 connections. Request p95 rose\r\nfrom 180 milliseconds to 4.8 seconds. Between 09:15 and 09:22, 840 requests\r\nreturned HTTP 503. There was no confirmed data loss or unauthorized access.\r\nAt 09:18 the on-call engineer rolled back the configuration. This did not\r\nrestore already expired cache entries. At 09:22 a controlled cache warm-up\r\nfinished and p95 returned to 190 milliseconds. Logs showed many concurrent\r\nloads for the same 20 product IDs. The database team found no failed database\r\nnodes. Synchronized expiration and duplicate loads are the confirmed trigger\r\nand amplification mechanism. Network packet loss was suggested but not measured.\r\nMira will add per-key request coalescing by Tuesday. Oleh will introduce TTL\r\njitter by Wednesday. Both changes require load tests before deployment.\r\nThe team rejected simply doubling the connection pool without measuring\r\ndatabase capacity. A proposed stale-cache fallback still needs a review of\r\nwhich product fields can safely be served stale. Follow-up tests must cover\r\nsimultaneous expiration, backend timeouts, failed loads, and recovery."
+    }
+  ]
+}

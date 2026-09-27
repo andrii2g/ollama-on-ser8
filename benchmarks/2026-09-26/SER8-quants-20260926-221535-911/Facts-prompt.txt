@@ -1,0 +1,16 @@
+<|im_start|>user
+Extract facts from this fictional report. Return ONLY one JSON object with exactly these keys:
+failed_requests (integer), affected_product_ids (integer), packet_loss_confirmed (boolean),
+data_loss_confirmed (boolean), coalescing_owner (string), jitter_owner (string),
+changes_load_tested (boolean).
+Report: At 09:15 synchronized cache expiration caused duplicate loads for the same
+20 product IDs. Between 09:15 and 09:22, 840 requests returned HTTP 503. There was no
+confirmed data loss. Network packet loss was suggested but not measured. Mira will
+add per-key request coalescing by Tuesday. Oleh will introduce TTL jitter by Wednesday.
+Both changes require load tests before deployment; those tests have not happened yet.
+Do not include commentary, Markdown fences, or extra keys.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

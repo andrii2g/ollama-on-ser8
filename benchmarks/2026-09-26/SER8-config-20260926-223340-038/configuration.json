@@ -1,0 +1,19 @@
+{
+  "Source": "ser8-qwen38-q4km-baseline:latest",
+  "Limits": "Best tested configuration, not a proof of a global optimum. 16K tested with 8583 input tokens.",
+  "Sampling": "Greedy temperature=0, matching benchmark sampling; clients may override profile parameters.",
+  "SourceManifest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+  "Profiles": [
+    {
+      "Name": "ser8-qwen38:8k",
+      "Context": 8192
+    },
+    {
+      "Name": "ser8-qwen38:16k",
+      "Context": 16384
+    }
+  ],
+  "Requests": "Set think=false and keep_alive=15m in the client. Use streaming for interactive display.",
+  "Ollama": "0.34.2",
+  "Server": "Use existing tested Vulkan server: one parallel request, one loaded model, f16 KV, Flash Attention auto."
+}

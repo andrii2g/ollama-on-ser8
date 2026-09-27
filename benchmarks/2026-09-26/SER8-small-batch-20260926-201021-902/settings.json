@@ -1,0 +1,28 @@
+{
+  "Thinking": false,
+  "Draft": 2,
+  "Stages": [
+    {
+      "Context": 8192,
+      "Records": 100,
+      "Batch": 128
+    },
+    {
+      "Context": 8192,
+      "Records": 100,
+      "Batch": 64
+    },
+    {
+      "Context": 8192,
+      "Records": 100,
+      "Batch": 256
+    }
+  ],
+  "Started": "2026-09-26T20:10:21.9070961+03:00",
+  "Version": "0.34.2",
+  "Threads": 6,
+  "Seed": 42,
+  "Temperature": 0,
+  "Model": "qwen3.8:latest",
+  "MaxOutput": 256
+}

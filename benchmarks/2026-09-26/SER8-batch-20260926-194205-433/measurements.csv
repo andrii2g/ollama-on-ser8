@@ -1,0 +1,4 @@
+﻿"Batch","Context","Records","PromptTokens","CachedTokens","PrefillSec","PrefillTPS","OutputTokens","GenTokPerSec","WallSec","FreeGiBBefore","FreeGiBAfter","BeginOK","MiddleOK","EndOK","StopReason"
+"256","8192","100","3395","0","56.94","59.63","256","6.536","96.44","18.27","17.85","True","True","True","length"
+"512","8192","100","3395","0","58.56","57.97","256","6.462","98.57","18.05","17.62","True","True","True","length"
+"1024","8192","100","3395","0","61.52","55.18","256","6.282","102.61","17.62","17.4","True","True","True","length"

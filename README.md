@@ -4,12 +4,15 @@ Recommended starting configuration for a Beelink SER8 with **Ryzen 7 8845HS,
 Radeon 780M and 2 x 32 GB DDR5-5600**: Ollama, **27.3B Q4_K_M weights with MTP**,
 Vulkan acceleration, and two saved context profiles.
 
-**Evidence:** these settings were benchmarked on Windows 11 with Ollama 0.34.2.
+**Evidence:** Windows benchmark artifacts from 2026-09-26 are included in
+[the benchmark report](benchmarks/2026-09-26/README.md): measurements, settings,
+prompts and saved API responses from Ollama 0.34.2. The test machine was the
+Windows 11 SER8 described above.
 The Linux setup below is an adaptation, not a measured Linux performance claim.
 Linux drivers, backend builds, power limits and available RAM can change results.
 This guide targets native Linux; WSL and Docker GPU setup are outside its scope.
 
-## What worked best
+## Reported benchmark configuration
 
 | Setting | Recommendation |
 |---|---|
@@ -21,17 +24,20 @@ This guide targets native Linux; WSL and Docker GPU setup are outside its scope.
 | Concurrent requests / loaded models | 1 / 1 |
 | Thinking / keep-alive | Off for benchmark-like latency / 15 minutes |
 
-CPU-only generation was about **3.2 tokens/sec**. Vulkan without MTP reached
-**4.06**, and MTP draft 2 reached about **7.3** on a short SQL prompt. Longer
-512-token tasks generated at **7.16-8.11 tokens/sec**; long-context tests were
-around **6.5**. Draft lengths 1, 3 and 4 were slower than 2. Batch 128 and 256
-were close; larger batches offered no improvement. The tested IQ4_XS file saved
-weight memory but generated slower than Q4_K_M in every compared workload.
+On three 512-token tasks, MTP draft 2 generated at **7.16-8.11 tokens/sec**,
+compared with **3.77-4.10** with draft 0. These runs hit their output-token limits;
+they measure throughput, not completed-task quality. Long-context Ollama runs
+were around **6.5 tokens/sec**. Batch 128 and 256 were close in the saved runs;
+larger batches offered no improvement. The tested IQ4_XS file generated slower
+than Q4_K_M in every compared workload.
 
-Long input still costs time: roughly 57-63 seconds for 3,395 uncached input
-tokens, and 149-156 seconds for 8,583, in the context runs. The 16K profile was
-tested with 8,583 input tokens, not a full 16K input. Small retrieval checks passed;
-these are not general accuracy or code-correctness benchmarks.
+Long input still costs time: the dedicated context test took **57.07 seconds**
+for 3,395 uncached input tokens and **149.46 seconds** for 8,583. A separate 16K
+runtime comparison recorded **156.26 seconds** for the latter input. The 16K
+profile was tested with 8,583 input tokens, not a full 16K input. Small retrieval
+checks passed; these are not general accuracy or code-correctness benchmarks.
+See the [report and source data](benchmarks/2026-09-26/README.md) for per-case
+results, cache differences, and limits on these comparisons.
 
 ## The profiles
 
@@ -47,7 +53,7 @@ Profiles inherit the source template and projector and reuse the same model blob
 
 ## Linux setup
 
-Requirements: Bash, Python 3, Ollama with Vulkan and this model's MTP support,
+Requirements: Git (for cloning), Bash, Python 3, Ollama with Vulkan and this model's MTP support,
 and a working AMD Vulkan driver. Install Ollama using the [official Linux
 instructions](https://docs.ollama.com/linux); 0.34.2 is the benchmark reference.
 The standard `ollama.service` is assumed below.
@@ -58,7 +64,37 @@ tools if needed). The GPU must also be accessible to the service account. Ollama
 membership in `render`. Check `ls -l /dev/dri/` and the service's user before
 changing permissions; do not run the daemon as root to work around GPU access.
 
-From the extracted `ser8-ollama-qwen38` directory:
+Run these commands on the Linux SER8. Clone the repository and enter its root:
+
+```bash
+git clone https://github.com/andrii2g/ollama-on-ser8.git
+cd ollama-on-ser8
+```
+
+If you already downloaded or cloned the project, open its root directory instead.
+Run all following commands from that directory.
+
+### Host configuration
+
+The supplied scripts connect only to `127.0.0.1:11434`. The profile creation and
+chat helpers override an inherited `OLLAMA_HOST`; the Python API checks also use
+that fixed address. There is currently no `.env` loading or remote-host support
+in these helpers.
+
+For CLI commands, `OLLAMA_HOST` selects the server to connect to. In the systemd
+drop-in and `ollama serve` command, it sets the server's listening address. This
+setup uses localhost for both. Set the client host explicitly so downloads and
+checks reach the same server as the helpers:
+
+```bash
+export OLLAMA_HOST=127.0.0.1:11434
+```
+
+This export applies only to the current shell; repeat it in new terminals, or
+use the inline assignments shown below. Local graphical/API clients should
+connect to `http://127.0.0.1:11434`.
+
+### Install the service configuration and profiles
 
 ```bash
 # Install a persistent systemd drop-in. Uses sudo where needed.
@@ -111,12 +147,13 @@ The helper unloads the other SER8 profile and runs the selected one with
 conversation; it does not transfer history from another session. Finish requests
 in other clients before switching.
 
-Equivalent direct commands:
+To start a chat directly, use the commands below. Unlike the helper, these do
+not explicitly stop the other profile first:
 
 ```bash
-ollama run ser8-qwen38:8k --think=false --keepalive 15m
+OLLAMA_HOST=127.0.0.1:11434 ollama run ser8-qwen38:8k --think=false --keepalive 15m
 # or
-ollama run ser8-qwen38:16k --think=false --keepalive 15m
+OLLAMA_HOST=127.0.0.1:11434 ollama run ser8-qwen38:16k --think=false --keepalive 15m
 ```
 
 In a graphical Linux client, select the corresponding model name. For API clients,
@@ -130,7 +167,7 @@ After sending a message, use another terminal:
 
 ```bash
 bash scripts/verify-profile.sh 8k   # or 16k
-ollama ps
+OLLAMA_HOST=127.0.0.1:11434 ollama ps
 sudo journalctl -u ollama -b -n 200 --no-pager
 ```
 
@@ -142,11 +179,33 @@ resolved before treating this as the tested setup. The 780M uses shared system R
 reported GPU allocation is not dedicated VRAM. Close heavy apps and avoid duplicate
 servers or runners. Keep one server and one model loaded during validation.
 
-These scripts passed syntax and mocked API/CLI checks. They have not been run
-against a real Linux SER8 GPU in this environment.
+## Validation status
+
+All four scripts passed Bash syntax checks during the documentation review on
+2026-09-27. Repeat that check from the repository root with:
+
+```bash
+for script in scripts/*.sh; do
+  bash -n "$script" || exit 1
+done
+```
+
+Syntax checks do not execute the scripts or validate Ollama behavior. Earlier
+setup notes reported mocked API/CLI checks, but their harness and results are
+not included here and were not verified during this review. No real Linux SER8
+GPU run has been verified for this repository. Use the runtime checks above to
+validate your installation.
+
+For comparable benchmark results, record the OS, driver and Ollama versions,
+model digest, profile, exact prompt, request options, input/output token counts,
+prompt-evaluation and generation durations, and whether the model and prompt
+cache were warm. Keep the raw responses and repeat each measurement. Saved prompts, settings and responses are linked from the
+[benchmark report](benchmarks/2026-09-26/README.md). The original benchmark
+execution harness is not included; replaying the prompts requires recreating
+the recorded request options and cache conditions.
 
 For manual serving and undo instructions, see [LINUX-NOTES.md](LINUX-NOTES.md).
 
-Sources (checked 2026-09-26): [model tags](https://ollama.com/library/qwen3.8/tags),
+Sources (links reviewed 2026-09-27): [model tags](https://ollama.com/library/qwen3.8/tags),
 [Linux](https://docs.ollama.com/linux), [GPU support](https://docs.ollama.com/gpu),
 [Modelfiles](https://docs.ollama.com/modelfile), [chat API](https://docs.ollama.com/api/chat).

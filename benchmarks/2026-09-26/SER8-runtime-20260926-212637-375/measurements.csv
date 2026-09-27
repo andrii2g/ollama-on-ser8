@@ -1,0 +1,5 @@
+﻿"Runtime","Case","OutputTokens","GenTokPerSec","PromptTokens","CachedTokens","PrefillSec","WallSec","FreeGiBAfter","StopReason","BeginOK","MiddleOK","EndOK"
+"Ollama","SQL","128","7.497","53","0","1.56","19.06","15.15","length",,,
+"Ollama","Context100","256","6.444","3395","0","62.7","102.86","15.51","length","True","True","True"
+"LlamaCpp","SQL","128","7.233","53","180","1.36","19.46","16.02","limit",,,
+"LlamaCpp","Context100","256","6.370","3395","3650","46.62","87.23","15.41","limit","True","True","True"

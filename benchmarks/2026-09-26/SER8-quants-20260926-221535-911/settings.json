@@ -1,0 +1,39 @@
+{
+  "Version": "0.34.2",
+  "Draft": 2,
+  "Threads": 6,
+  "Batch": 256,
+  "Sampling": "Greedy, seed 42, identical explicit ChatML with closed thinking block",
+  "Context": 8192,
+  "Blocks": [
+    {
+      "Label": "Q4_K_M",
+      "Model": "ser8-qwen38-q4km-textbench:latest",
+      "Cases": [
+        "SQL",
+        "SQL",
+        "Context100"
+      ]
+    },
+    {
+      "Label": "IQ4_XS",
+      "Model": "ser8-qwen38-iq4xs:latest",
+      "Cases": [
+        "SQL",
+        "SQL",
+        "Context100",
+        "CSharp",
+        "Facts"
+      ]
+    },
+    {
+      "Label": "Q4_K_M",
+      "Model": "ser8-qwen38-q4km-textbench:latest",
+      "Cases": [
+        "CSharp",
+        "Facts"
+      ]
+    }
+  ],
+  "Note": "Compares these specific GGUFs; quantizer/tensor layouts may differ. C# requires review."
+}

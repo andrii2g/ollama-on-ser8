@@ -1,0 +1,9 @@
+<|im_start|>user
+Write a detailed technical explanation of how a relational database executes
+a SELECT query. Cover parsing, query planning, indexes, joins, sorting,
+transactions, and returning results. Use several paragraphs and examples.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

@@ -1,0 +1,58 @@
+{
+  "Ollama": {
+    "version": "0.34.2"
+  },
+  "Draft": 2,
+  "Note": "One measured run per case; inspect cached-token counts and logs before conclusions",
+  "PromptFormat": "Explicit ChatML with closed thinking block; raw completion APIs",
+  "Batch": 256,
+  "Threads": 6,
+  "CacheType": "f16",
+  "Setup": {
+    "Release": "b11200",
+    "ReleaseURL": "https://github.com/ggml-org/llama.cpp/releases/tag/b11200",
+    "Prerelease": true,
+    "Asset": "llama-b11200-bin-win-vulkan-x64.zip",
+    "AssetURL": "https://github.com/ggml-org/llama.cpp/releases/download/b11200/llama-b11200-bin-win-vulkan-x64.zip",
+    "SHA256": "670a1f9bf5272c43dbbd7b0004a12dd3d3f6f575246fd23b733f06c064f1b96b",
+    "ReleaseDigestVerified": true,
+    "Executable": "%USERPROFILE%\\AppData\\Local\\SER8-llama.cpp\\b11200-20260926-204232-766\\bin\\llama-server.exe",
+    "InstallDirectory": "%USERPROFILE%\\AppData\\Local\\SER8-llama.cpp\\b11200-20260926-204232-766",
+    "ModelPath": "%USERPROFILE%\\.ollama\\models\\blobs\\sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+    "ModelExists": true,
+    "ProjectorPath": "%USERPROFILE%\\.ollama\\models\\blobs\\sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e",
+    "ProjectorExists": true,
+    "Created": "2026-09-26T20:42:34.9171257+03:00"
+  },
+  "UBatch": 256,
+  "Tag": {
+    "name": "qwen3.8:latest",
+    "model": "qwen3.8:latest",
+    "modified_at": "2026-08-20T20:53:10.5106441+03:00",
+    "size": 17741872154,
+    "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+    "details": {
+      "parent_model": "qwen3.8:27b-q4_K_M",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "27.3B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "Context": 8192,
+  "Cases": [
+    "SQL",
+    "Context100"
+  ]
+}
