@@ -1,0 +1,15 @@
+{
+  "requested_utc": "2026-09-27T15:30:03.378139+00:00",
+  "policy": "User requested continuous processing without further cooling rests; externally resume pending suspensions without cancelling the API request.",
+  "runner_pid": 114228,
+  "overrides": [
+    {
+      "pause_start_sec": 896.8159916000441,
+      "resumed_utc": "2026-09-27T15:30:13.742530+00:00",
+      "approximate_pause_sec": 0.7820644378662109,
+      "gpu_temperature_c": 81.0,
+      "note": "Resume time measured from pause-state file modification; small process-control overhead is not included. Later controller end/duration for this event does not measure an actual suspension."
+    }
+  ],
+  "helper_finished_utc": "2026-09-27T15:45:30.602300+00:00"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "elapsed_sec": 0,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 38.76795959472656,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 0.0,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 38.76782989501953,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 5.01,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 26.05526351928711,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 10.03,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 22.060970306396484,
+    "total_gib": 59.76161193847656
+  }
+]

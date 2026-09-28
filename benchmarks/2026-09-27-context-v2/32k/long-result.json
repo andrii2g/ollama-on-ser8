@@ -1,0 +1,20 @@
+{
+  "wall_sec": 879.396453300491,
+  "time_to_first_token_sec": 831.2104986999184,
+  "minimum_available_gib": 5.019664764404297,
+  "error": null,
+  "prompt_eval_count": 28461,
+  "prompt_eval_cached_count": 0,
+  "eval_count": 256,
+  "done_reason": "length",
+  "prefill_sec": 831.059715,
+  "generation_tok_sec": 5.31614325186946,
+  "load_sec": 0.007811,
+  "retrieval": {
+    "BEGIN": true,
+    "MIDDLE": true,
+    "END": true
+  },
+  "near_context_target": true,
+  "input_plus_output_within_context": true
+}

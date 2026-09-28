@@ -1,0 +1,14 @@
+{
+  "wall_sec": 13.098713300190866,
+  "time_to_first_token_sec": 12.731945000588894,
+  "minimum_available_gib": 22.727569580078125,
+  "maximum_gpu_temperature_c": 50.0,
+  "error": null,
+  "prompt_eval_count": 17,
+  "prompt_eval_cached_count": 0,
+  "eval_count": 2,
+  "done_reason": "stop",
+  "prefill_sec": 1.437884,
+  "generation_tok_sec": 5.4818400344259555,
+  "load_sec": 11.267606
+}

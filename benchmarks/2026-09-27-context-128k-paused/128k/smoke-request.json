@@ -1,0 +1,13 @@
+{
+  "model": "ser8-qwen38:128k",
+  "prompt": "Reply with exactly READY.",
+  "stream": true,
+  "think": false,
+  "keep_alive": "15m",
+  "options": {
+    "seed": 42,
+    "temperature": 0,
+    "num_predict": 8,
+    "num_ctx": 131072
+  }
+}

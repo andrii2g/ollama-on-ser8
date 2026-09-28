@@ -1,0 +1,126 @@
+[
+  {
+    "elapsed_sec": 0.0002522999420762062,
+    "gpu_temperature_c": 49.0
+  },
+  {
+    "elapsed_sec": 10.002489300444722,
+    "gpu_temperature_c": 46.0
+  },
+  {
+    "elapsed_sec": 20.004179400391877,
+    "gpu_temperature_c": 45.0
+  },
+  {
+    "elapsed_sec": 30.00700080022216,
+    "gpu_temperature_c": 44.0
+  },
+  {
+    "elapsed_sec": 40.00923470035195,
+    "gpu_temperature_c": 44.0
+  },
+  {
+    "elapsed_sec": 50.011880200356245,
+    "gpu_temperature_c": 44.0
+  },
+  {
+    "elapsed_sec": 60.01407750044018,
+    "gpu_temperature_c": 46.0
+  },
+  {
+    "elapsed_sec": 70.01604770030826,
+    "gpu_temperature_c": 43.0
+  },
+  {
+    "elapsed_sec": 80.01953400019556,
+    "gpu_temperature_c": 43.0
+  },
+  {
+    "elapsed_sec": 90.02295809984207,
+    "gpu_temperature_c": 43.0
+  },
+  {
+    "elapsed_sec": 100.02577440068126,
+    "gpu_temperature_c": 43.0
+  },
+  {
+    "elapsed_sec": 110.02865000069141,
+    "gpu_temperature_c": 42.0
+  },
+  {
+    "elapsed_sec": 120.03323059994727,
+    "gpu_temperature_c": 42.0
+  },
+  {
+    "elapsed_sec": 130.03667789977044,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 140.04003369994462,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 150.04344500042498,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 160.0467960005626,
+    "gpu_temperature_c": 42.0
+  },
+  {
+    "elapsed_sec": 170.05046769976616,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 180.05242870002985,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 190.05470329988748,
+    "gpu_temperature_c": 42.0
+  },
+  {
+    "elapsed_sec": 200.0563317006454,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 210.0580889005214,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 220.06046850048006,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 230.0633465005085,
+    "gpu_temperature_c": 41.0
+  },
+  {
+    "elapsed_sec": 240.06541359983385,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 250.06738060060889,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 260.0712924003601,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 270.0734652997926,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 280.0760666998103,
+    "gpu_temperature_c": 40.0
+  },
+  {
+    "elapsed_sec": 290.079452900216,
+    "gpu_temperature_c": 39.0
+  },
+  {
+    "elapsed_sec": 300.0825786003843,
+    "gpu_temperature_c": 40.0
+  }
+]

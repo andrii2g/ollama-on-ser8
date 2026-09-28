@@ -1,0 +1,29 @@
+load_tensors: offloaded 66/66 layers to GPU
+llama_context: n_ctx_seq             = 32768
+llama_context: n_ctx_seq (32768) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =  2048.00 MiB
+resolve_fused_ops: Flash Attention enabled
+llama_context: n_ctx_seq             = 32768
+llama_context: n_ctx_seq (32768) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =   128.00 MiB
+resolve_fused_ops: Flash Attention enabled
+time=2026-09-27T17:00:32.854+03:00 level=WARN source=llama_server.go:318 msg="truncating input prompt" limit=16386 prompt=33701 keep=4 new=16386
+load_tensors: offloaded 66/66 layers to GPU
+llama_context: n_ctx_seq             = 32768
+llama_context: n_ctx_seq (32768) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =  2048.00 MiB
+resolve_fused_ops: Flash Attention enabled
+llama_context: n_ctx_seq             = 32768
+llama_context: n_ctx_seq (32768) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =   128.00 MiB
+resolve_fused_ops: Flash Attention enabled
+load_tensors: offloaded 66/66 layers to GPU
+llama_context: n_ctx_seq             = 65536
+llama_context: n_ctx_seq (65536) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =  4096.00 MiB
+resolve_fused_ops: Flash Attention enabled
+llama_context: n_ctx_seq             = 65536
+llama_context: n_ctx_seq (65536) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+llama_kv_cache:    Vulkan0 KV buffer size =   256.00 MiB
+resolve_fused_ops: Flash Attention enabled
+slot   operator(): id  0 | task 4 | new prompt, n_ctx_slot = 65536, n_keep = 4, task.n_tokens = 57060

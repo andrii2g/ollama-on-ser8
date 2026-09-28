@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-64k
+MIDDLE=P8T3-N6X1-64k
+END=W5H2-J9D4-64k
+
+Timeout values alone are insufficient to establish service reliability because they only measure the maximum duration a request waits before failing, not the actual performance or success rate of the service. A low timeout setting might indicate a highly responsive service, but it could also simply reflect a strict configuration that causes frequent, unnecessary failures for slightly slower but successful requests. Conversely, a high timeout does not guarantee reliability; a service could consistently operate near its timeout limit, resulting in poor user experience and high latency, even if it technically succeeds. Furthermore, timeout data does not account for error rates, such as 5xx server errors or 4xx client errors, which are critical indicators of stability.
+
+To accurately assess reliability, additional metrics are required. These include the error rate, which quantifies the percentage of failed requests, and the success rate, which measures the proportion of successful responses. Latency percentiles, such as p50, p95, and p99, provide a more granular view of response times, highlighting tail latency issues that average timeouts might obscure. Through

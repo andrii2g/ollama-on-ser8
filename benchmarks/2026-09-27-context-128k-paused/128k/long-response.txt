@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-128k
+MIDDLE=P8T3-N6X1-128k
+END=W5H2-J9D4-128k
+
+Timeout values alone are insufficient to establish service reliability because they only measure the maximum duration a request waits before failing, not the actual performance or success rate of the service. A service might have a high timeout threshold but still experience frequent errors, high latency, or low throughput, all of which indicate poor reliability. Conversely, a service with a low timeout might be highly reliable if it consistently responds well within that limit.
+
+To accurately assess reliability, additional metrics are required. These include error rates (such as 5xx HTTP status codes), which directly indicate failure frequency. Latency percentiles (p50, p95, p99) provide a more granular view of response times, revealing tail latency issues that average timeouts might mask. Throughput (requests per second) helps determine if the service can handle expected load without degradation. Availability percentages, calculated over specific time windows, offer a holistic view of uptime. Furthermore, dependency health checks and resource utilization metrics (CPU, memory, disk I/O) can identify bottlenecks that might

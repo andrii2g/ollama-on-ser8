@@ -1,0 +1,25 @@
+{
+  "Date": "2026-09-27",
+  "OS": {
+    "Caption": "Microsoft Windows 11 Pro",
+    "Version": "10.0.26100",
+    "BuildNumber": "26100",
+    "TotalVisibleMemorySize": 62664592
+  },
+  "CPU": {
+    "Name": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     "
+  },
+  "GPU": {
+    "Name": "AMD Radeon 780M Graphics",
+    "DriverVersion": "32.0.23033.1002"
+  },
+  "Server": {
+    "Parallel": 1,
+    "MaxLoadedModels": 1,
+    "Host": "127.0.0.1:11434",
+    "FlashAttention": "auto (runner confirmed)",
+    "KVCache": "f16",
+    "IntegratedGPU": "1",
+    "Vulkan": "1"
+  }
+}

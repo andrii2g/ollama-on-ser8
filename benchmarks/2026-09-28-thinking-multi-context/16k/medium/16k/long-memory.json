@@ -1,0 +1,686 @@
+[
+  {
+    "elapsed_sec": 0,
+    "gpu_temperature_c": 43.0,
+    "available_gib": 19.543582916259766,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 0.0,
+    "gpu_temperature_c": 43.0,
+    "available_gib": 19.543582916259766,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 5.0,
+    "gpu_temperature_c": 59.0,
+    "available_gib": 19.425704956054688,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 10.02,
+    "gpu_temperature_c": 56.0,
+    "available_gib": 19.396743774414062,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 15.04,
+    "gpu_temperature_c": 58.0,
+    "available_gib": 19.40194320678711,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 20.04,
+    "gpu_temperature_c": 60.0,
+    "available_gib": 19.43063735961914,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 25.04,
+    "gpu_temperature_c": 62.0,
+    "available_gib": 19.388641357421875,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 30.06,
+    "gpu_temperature_c": 66.0,
+    "available_gib": 19.36880874633789,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 35.08,
+    "gpu_temperature_c": 66.0,
+    "available_gib": 19.38595962524414,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 40.09,
+    "gpu_temperature_c": 65.0,
+    "available_gib": 19.39130401611328,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 45.11,
+    "gpu_temperature_c": 67.0,
+    "available_gib": 19.389171600341797,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 50.13,
+    "gpu_temperature_c": 66.0,
+    "available_gib": 22.771392822265625,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 55.14,
+    "gpu_temperature_c": 67.0,
+    "available_gib": 22.956729888916016,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 60.14,
+    "gpu_temperature_c": 72.0,
+    "available_gib": 22.95205307006836,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 65.14,
+    "gpu_temperature_c": 68.0,
+    "available_gib": 23.111682891845703,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 70.15,
+    "gpu_temperature_c": 71.0,
+    "available_gib": 23.10596466064453,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 75.16,
+    "gpu_temperature_c": 69.0,
+    "available_gib": 23.572612762451172,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 80.18,
+    "gpu_temperature_c": 73.0,
+    "available_gib": 23.57402801513672,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 85.19,
+    "gpu_temperature_c": 74.0,
+    "available_gib": 23.592464447021484,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 90.21,
+    "gpu_temperature_c": 72.0,
+    "available_gib": 23.600872039794922,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 95.21,
+    "gpu_temperature_c": 72.0,
+    "available_gib": 23.627593994140625,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 100.22,
+    "gpu_temperature_c": 75.0,
+    "available_gib": 23.62978744506836,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 105.23,
+    "gpu_temperature_c": 72.0,
+    "available_gib": 23.607036590576172,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 110.24,
+    "gpu_temperature_c": 74.0,
+    "available_gib": 23.546260833740234,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 115.25,
+    "gpu_temperature_c": 71.0,
+    "available_gib": 23.572521209716797,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 120.26,
+    "gpu_temperature_c": 72.0,
+    "available_gib": 23.415443420410156,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 125.27,
+    "gpu_temperature_c": 75.0,
+    "available_gib": 23.451637268066406,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 130.29,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 23.432174682617188,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 135.3,
+    "gpu_temperature_c": 75.0,
+    "available_gib": 23.44628143310547,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 140.32,
+    "gpu_temperature_c": 74.0,
+    "available_gib": 23.497283935546875,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 145.33,
+    "gpu_temperature_c": 76.0,
+    "available_gib": 23.482009887695312,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 150.35,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 23.499195098876953,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 155.35,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 23.499610900878906,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 160.36,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.511146545410156,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 165.38,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.490222930908203,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 170.4,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.464740753173828,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 175.41,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 23.467544555664062,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 180.41,
+    "gpu_temperature_c": 78.0,
+    "available_gib": 23.448856353759766,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 185.43,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.474742889404297,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 190.46,
+    "gpu_temperature_c": 77.0,
+    "available_gib": 23.479724884033203,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 195.46,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.477783203125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 200.47,
+    "gpu_temperature_c": 65.0,
+    "available_gib": 23.31473159790039,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 205.49,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.307083129882812,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 210.5,
+    "gpu_temperature_c": 78.0,
+    "available_gib": 23.11315155029297,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 215.51,
+    "gpu_temperature_c": 79.0,
+    "available_gib": 23.10883331298828,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 220.52,
+    "gpu_temperature_c": 78.0,
+    "available_gib": 23.12549591064453,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 225.54,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.141407012939453,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 230.55,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.116287231445312,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 235.57,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.126541137695312,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 240.57,
+    "gpu_temperature_c": 81.0,
+    "available_gib": 23.107723236083984,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 245.58,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.129180908203125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 250.6,
+    "gpu_temperature_c": 81.0,
+    "available_gib": 23.145774841308594,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 255.61,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.15115737915039,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 260.61,
+    "gpu_temperature_c": 80.0,
+    "available_gib": 23.163658142089844,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 265.64,
+    "gpu_temperature_c": 81.0,
+    "available_gib": 23.15920639038086,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 270.65,
+    "gpu_temperature_c": 82.0,
+    "available_gib": 23.16039276123047,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 275.66,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.157062530517578,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 280.68,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.165802001953125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 285.69,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.16809844970703,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 290.71,
+    "gpu_temperature_c": 81.0,
+    "available_gib": 23.144878387451172,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 295.72,
+    "gpu_temperature_c": 82.0,
+    "available_gib": 23.13687515258789,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 300.73,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.144527435302734,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 305.74,
+    "gpu_temperature_c": 84.0,
+    "available_gib": 23.146610260009766,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 310.76,
+    "gpu_temperature_c": 84.0,
+    "available_gib": 23.14220428466797,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 315.77,
+    "gpu_temperature_c": 84.0,
+    "available_gib": 23.149181365966797,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 320.79,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.170719146728516,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 325.8,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.168209075927734,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 330.8,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.164573669433594,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 335.82,
+    "gpu_temperature_c": 83.0,
+    "available_gib": 23.16472625732422,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 340.83,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.159378051757812,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 345.85,
+    "gpu_temperature_c": 84.0,
+    "available_gib": 23.171875,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 350.86,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.141315460205078,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 355.88,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.144912719726562,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 360.89,
+    "gpu_temperature_c": 84.0,
+    "available_gib": 23.14432144165039,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 365.9,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.14310073852539,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 370.91,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.119625091552734,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 375.93,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.14303207397461,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 380.93,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.163333892822266,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 385.94,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.161407470703125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 390.94,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.160572052001953,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 395.96,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.16051483154297,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 400.97,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.158321380615234,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 405.99,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.166725158691406,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 411.0,
+    "gpu_temperature_c": 86.0,
+    "available_gib": 23.14255142211914,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 416.02,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.141101837158203,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 421.05,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.141185760498047,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 426.05,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.143627166748047,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 431.07,
+    "gpu_temperature_c": 85.0,
+    "available_gib": 23.11510467529297,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 436.08,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.150779724121094,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 441.1,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.17095184326172,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 446.11,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.167797088623047,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 451.13,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.165531158447266,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 456.13,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.164505004882812,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 461.15,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.096744537353516,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 466.15,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.109821319580078,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 471.15,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.109081268310547,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 476.15,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.10858917236328,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 481.16,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.107521057128906,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 486.18,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.105674743652344,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 491.19,
+    "gpu_temperature_c": 87.0,
+    "available_gib": 23.098037719726562,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 496.21,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.103641510009766,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 501.21,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.132736206054688,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 506.22,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.13153839111328,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 511.24,
+    "gpu_temperature_c": 88.0,
+    "available_gib": 23.131752014160156,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 516.26,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.130264282226562,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 521.27,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.124534606933594,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 526.27,
+    "gpu_temperature_c": 91.0,
+    "available_gib": 23.122047424316406,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 531.27,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.135143280029297,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 536.29,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.129135131835938,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 541.3,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.126449584960938,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 546.32,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.122814178466797,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 551.33,
+    "gpu_temperature_c": 89.0,
+    "available_gib": 23.132747650146484,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 556.34,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.118621826171875,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 561.35,
+    "gpu_temperature_c": 90.0,
+    "available_gib": 23.10549545288086,
+    "total_gib": 59.76161193847656
+  }
+]

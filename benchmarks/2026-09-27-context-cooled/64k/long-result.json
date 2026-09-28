@@ -1,0 +1,14 @@
+{
+  "wall_sec": 210.4993126001209,
+  "time_to_first_token_sec": null,
+  "minimum_available_gib": 20.858745574951172,
+  "maximum_gpu_temperature_c": 86.0,
+  "error": "GPU temperature 86.0 C reached 85.0 C limit",
+  "retrieval": {
+    "BEGIN": false,
+    "MIDDLE": false,
+    "END": false
+  },
+  "near_context_target": false,
+  "input_plus_output_within_context": null
+}

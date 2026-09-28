@@ -1,0 +1,249 @@
+{
+  "started_utc": "2026-09-27T23:18:25.079907+00:00",
+  "profiles_records": {
+    "16k": 304,
+    "32k": 720,
+    "64k": 1505,
+    "128k": 3000
+  },
+  "levels": [
+    "medium",
+    "high"
+  ],
+  "num_predict": 4096,
+  "thermal_policy": {
+    "pause_at_c": 95,
+    "rest_seconds": 60,
+    "resume_below_c": 80,
+    "scheduled_pauses": false
+  },
+  "note": "Within each profile, medium and high receive identical synthetic retrieval prompts. Input lengths target approximately 70-87% of allocated context, preserving output space for thinking and a final answer. Thinking trace text is discarded; only timing and character/chunk counts are saved.",
+  "results": {
+    "16k": {
+      "medium": {
+        "wall_sec": 564.2467705002055,
+        "time_to_first_token_sec": 524.5645856000483,
+        "minimum_available_gib": 19.36880874633789,
+        "maximum_gpu_temperature_c": 91.0,
+        "error": null,
+        "first_thinking_token_sec": 208.23578580003232,
+        "thinking_character_count": 7842,
+        "thinking_chunk_count": 2250,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 11401,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 2658,
+        "done_reason": "stop",
+        "prefill_sec": 208.119643,
+        "generation_tok_sec": 7.466404403547113,
+        "load_sec": 0.0053297,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": false,
+        "input_plus_output_within_context": true
+      },
+      "high": {
+        "wall_sec": 810.6782713001594,
+        "time_to_first_token_sec": 801.5192948002368,
+        "minimum_available_gib": 22.489879608154297,
+        "maximum_gpu_temperature_c": 91.0,
+        "error": null,
+        "first_thinking_token_sec": 207.952879300341,
+        "thinking_character_count": 12820,
+        "thinking_chunk_count": 3758,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 11443,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 4096,
+        "done_reason": "length",
+        "prefill_sec": 207.84913,
+        "generation_tok_sec": 6.795997823608244,
+        "load_sec": 0.0046027,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": false,
+        "input_plus_output_within_context": true
+      }
+    },
+    "32k": {
+      "medium": {
+        "wall_sec": 666.8308229995891,
+        "time_to_first_token_sec": 612.0658208001405,
+        "minimum_available_gib": 21.647598266601562,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 553.9182208003476,
+        "thinking_character_count": 1421,
+        "thinking_chunk_count": 315,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 26962,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 640,
+        "done_reason": "stop",
+        "prefill_sec": 553.742921,
+        "generation_tok_sec": 5.669499603409644,
+        "load_sec": 0.0046523,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      },
+      "high": {
+        "wall_sec": 1144.0955469999462,
+        "time_to_first_token_sec": 1099.5400184998289,
+        "minimum_available_gib": 21.83127212524414,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 552.4817388001829,
+        "thinking_character_count": 12297,
+        "thinking_chunk_count": 3332,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 27004,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 3729,
+        "done_reason": "stop",
+        "prefill_sec": 552.351518,
+        "generation_tok_sec": 6.303439461853618,
+        "load_sec": 0.0055477,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      }
+    },
+    "64k": {
+      "medium": {
+        "wall_sec": 1505.7914147004485,
+        "time_to_first_token_sec": 1430.982119800523,
+        "minimum_available_gib": 19.385936737060547,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 1364.1809550002217,
+        "thinking_character_count": 1375,
+        "thinking_chunk_count": 315,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 56481,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 680,
+        "done_reason": "stop",
+        "prefill_sec": 1363.955912,
+        "generation_tok_sec": 4.803766525954691,
+        "load_sec": 0.0239335,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      },
+      "high": {
+        "wall_sec": 1748.6557737998664,
+        "time_to_first_token_sec": 1696.9620503000915,
+        "minimum_available_gib": 19.34548568725586,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 1356.28466929961,
+        "thinking_character_count": 6042,
+        "thinking_chunk_count": 1700,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 56523,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 2054,
+        "done_reason": "stop",
+        "prefill_sec": 1356.088516,
+        "generation_tok_sec": 5.236111659301071,
+        "load_sec": 0.0235894,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      }
+    },
+    "128k": {
+      "medium": {
+        "wall_sec": 3799.2330475002527,
+        "time_to_first_token_sec": 3708.5948527008295,
+        "minimum_available_gib": 14.145133972167969,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 3627.968334200792,
+        "thinking_character_count": 1167,
+        "thinking_chunk_count": 280,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 113910,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 629,
+        "done_reason": "stop",
+        "prefill_sec": 3627.600683,
+        "generation_tok_sec": 3.674827861481541,
+        "load_sec": 0.0455864,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      },
+      "high": {
+        "wall_sec": 4441.2301245993,
+        "time_to_first_token_sec": 4375.685056899674,
+        "minimum_available_gib": 14.115089416503906,
+        "maximum_gpu_temperature_c": 93.0,
+        "error": null,
+        "first_thinking_token_sec": 3641.5410527000204,
+        "thinking_character_count": 10646,
+        "thinking_chunk_count": 2778,
+        "pause_count": 0,
+        "paused_sec": 0,
+        "timings_include_cooling_pauses": true,
+        "prompt_eval_count": 113952,
+        "prompt_eval_cached_count": 0,
+        "eval_count": 3326,
+        "done_reason": "stop",
+        "prefill_sec": 3641.195636,
+        "generation_tok_sec": 4.159666864061994,
+        "load_sec": 0.0095086,
+        "retrieval": {
+          "BEGIN": true,
+          "MIDDLE": true,
+          "END": true
+        },
+        "near_context_target": true,
+        "input_plus_output_within_context": true
+      }
+    }
+  },
+  "updated_utc": "2026-09-28T03:15:09.688530+00:00",
+  "finished_utc": "2026-09-28T03:15:09.689117+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "interrupted for user-requested cooldown",
+  "completed_long_response": false,
+  "server_log_input_tokens": 57060,
+  "server_log_prefill_progress_seconds": 1685.14,
+  "note": "Server log reached prompt completion and generation began, but the client was stopped before a final response was saved. No complete retrieval or throughput result is claimed. Rerun with temperature guard and cooldown in the cooled run."
+}

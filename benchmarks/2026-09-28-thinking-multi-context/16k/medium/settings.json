@@ -1,0 +1,36 @@
+{
+  "started_utc": "2026-09-27T23:07:25.261731+00:00",
+  "ollama": {
+    "version": "0.34.2"
+  },
+  "profiles": [
+    "16k"
+  ],
+  "contexts": {
+    "16k": 16384,
+    "32k": 32768,
+    "64k": 65536,
+    "128k": 131072
+  },
+  "records": {
+    "16k": 304,
+    "32k": 760,
+    "64k": 1520,
+    "128k": 3040
+  },
+  "memory_before": {
+    "available_gib": 34.14934158325195,
+    "total_gib": 59.76161193847656
+  },
+  "max_seconds": 5400,
+  "cooldown_seconds": 0,
+  "max_gpu_temp_c": 95.0,
+  "resume_below_c": 80.0,
+  "pause_mode": true,
+  "work_seconds": 0,
+  "rest_seconds": 60,
+  "think": "medium",
+  "num_predict": 4096,
+  "source_weight": "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+  "note": "One smoke request with thinking off and one long request with the selected think setting per profile. Thinking and answer share num_predict. Reasoning trace text is discarded; count and timing metrics are retained. Unload after each profile. Shared-memory GPU; available RAM is whole-system, sampled every 5 seconds."
+}

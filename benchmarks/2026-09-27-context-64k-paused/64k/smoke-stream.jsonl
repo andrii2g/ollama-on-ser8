@@ -1,0 +1,2 @@
+{"model": "ser8-qwen38:64k", "created_at": "2026-09-27T15:15:15.7577956Z", "response": "READY", "done": false}
+{"model": "ser8-qwen38:64k", "created_at": "2026-09-27T15:15:16.1284957Z", "response": "", "done": true, "done_reason": "stop", "context": [248045, 846, 198, 20206, 440, 6681, 82385, 13, 248046, 198, 248045, 74455, 198, 248068, 271, 248069, 271, 44061], "total_duration": 11897822800, "load_duration": 10228527400, "prompt_eval_count": 17, "prompt_eval_cached_count": 0, "prompt_eval_duration": 1305084000, "eval_count": 2, "eval_duration": 361806000}

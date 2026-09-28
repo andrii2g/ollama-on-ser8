@@ -1,0 +1,3 @@
+{
+  "reason": "Aborted after server log reported input truncation: 33701 input tokens reduced to 16386. Not a valid 32K retrieval benchmark. Revised prompt uses 760 records and explicit request num_ctx. The completed smoke response remains valid."
+}

@@ -1,0 +1,16 @@
+BEGIN=R7M4-K2V9-16k
+MIDDLE=P8T3-N6X1-16k
+END=W5H2-J9D4-16k
+
+Timeout values represent a configured upper bound on how long a caller will wait before declaring a request failed. They are a policy parameter, not an observed performance metric. A service configured with a 500 ms timeout may consistently respond in 50 ms, or it may hover near 490 ms and fail intermittently under load—both scenarios share the same timeout setting yet exhibit radically different reliability profiles.
+
+To establish genuine service reliability, additional measurements are essential. These include:
+
+- Latency distributions (p50, p95, p99) to capture tail behavior rather than a single ceiling.
+- Success and error rates, broken down by error type (timeouts, 5xx responses, connection refusals, DNS failures).
+- Throughput and saturation metrics (CPU, memory, disk I/O, network bandwidth) to identify remaining capacity headroom.
+- Dependency health, since a service's reliability is bounded by its slowest or most fragile upstream component.
+- Retry and circuit-breaker behavior, which can mask or amplify underlying instability.
+- SLO/SLA compliance over defined time windows, providing a business-level reliability signal.
+
+Together, these measurements reveal whether a service is merely operating within its timeout budget or is genuinely dependable under real operational conditions and variable load.

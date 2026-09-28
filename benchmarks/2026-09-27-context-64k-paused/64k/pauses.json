@@ -1,0 +1,42 @@
+{
+  "runner_pid": 114228,
+  "paused": false,
+  "work_seconds": 300,
+  "rest_seconds": 120,
+  "pause_at_c": 85,
+  "resume_below_c": 70,
+  "events": [
+    {
+      "start_sec": 181.92740730009973,
+      "temperature_c": 85.0,
+      "reason": "temperature",
+      "end_sec": 302.6376841003075,
+      "duration_sec": 120.71027440018952,
+      "resume_temperature_c": 54.0
+    },
+    {
+      "start_sec": 423.5518513005227,
+      "temperature_c": 85.0,
+      "reason": "temperature",
+      "end_sec": 544.2497963001952,
+      "duration_sec": 120.6979408999905,
+      "resume_temperature_c": 49.0
+    },
+    {
+      "start_sec": 665.128801099956,
+      "temperature_c": 85.0,
+      "reason": "temperature",
+      "end_sec": 785.9118698006496,
+      "duration_sec": 120.78306750021875,
+      "resume_temperature_c": 55.0
+    },
+    {
+      "start_sec": 896.8159916000441,
+      "temperature_c": 85.0,
+      "reason": "temperature",
+      "end_sec": 1814.2593140006065,
+      "duration_sec": 917.4433204000816,
+      "resume_temperature_c": null
+    }
+  ]
+}

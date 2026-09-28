@@ -1,0 +1,29 @@
+{
+  "wall_sec": 1813.3612113995478,
+  "time_to_first_token_sec": 1758.394007699564,
+  "minimum_available_gib": 19.233646392822266,
+  "maximum_gpu_temperature_c": 93.0,
+  "error": null,
+  "pause_count": 4,
+  "paused_sec": 362.973347238265,
+  "timings_include_cooling_pauses": true,
+  "prompt_eval_count": 57060,
+  "prompt_eval_cached_count": 0,
+  "eval_count": 256,
+  "done_reason": "length",
+  "prefill_sec": 1758.164895,
+  "generation_tok_sec": 4.711716826849394,
+  "load_sec": 0.0062729,
+  "retrieval": {
+    "BEGIN": true,
+    "MIDDLE": true,
+    "END": true
+  },
+  "near_context_target": true,
+  "input_plus_output_within_context": true,
+  "controller_reported_paused_sec": 1279.6346032004803,
+  "paused_sec_is_approximate": true,
+  "full_cooling_pause_count": 3,
+  "externally_resumed_pause_count": 1,
+  "pause_accounting_note": "Reconciled against continuous-override.json. Original controller remained logically paused after external resume; its raw duration overstates the last suspension. Raw harness output is preserved in long-result-raw.json. Approximate override duration uses pause-state file modification time."
+}

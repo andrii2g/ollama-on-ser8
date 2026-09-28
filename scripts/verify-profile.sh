@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Checks the live placement AFTER a request; it does not load or switch a model.
 set -euo pipefail
-case "${1:-}" in 8k|16k) ;; *) echo 'Usage: bash scripts/verify-profile.sh {8k|16k}' >&2; exit 2 ;; esac
+case "${1:-}" in 8k|16k|32k|64k|128k) ;; *) echo 'Usage: bash scripts/verify-profile.sh {8k|16k|32k|64k|128k}' >&2; exit 2 ;; esac
 python3 - "$1" <<'PY'
 import json, sys, urllib.request
 model = 'ser8-qwen38:' + sys.argv[1]
-context = {'8k':8192,'16k':16384}[sys.argv[1]]
+context = {'8k':8192,'16k':16384,'32k':32768,'64k':65536,'128k':131072}[sys.argv[1]]
 http = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 try:
     with http.open('http://127.0.0.1:11434/api/ps', timeout=15) as r:

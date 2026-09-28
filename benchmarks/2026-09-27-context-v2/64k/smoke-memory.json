@@ -1,0 +1,32 @@
+[
+  {
+    "elapsed_sec": 0.0,
+    "available_gib": 32.30752944946289,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 5.02,
+    "available_gib": 19.556846618652344,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 10.03,
+    "available_gib": 19.421051025390625,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 15.03,
+    "available_gib": 19.234027862548828,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 20.03,
+    "available_gib": 15.897979736328125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 25.05,
+    "available_gib": 13.315238952636719,
+    "total_gib": 59.76161193847656
+  }
+]

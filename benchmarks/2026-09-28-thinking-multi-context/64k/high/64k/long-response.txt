@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-64k
+MIDDLE=P8T3-N6X1-64k
+END=W5H2-J9D4-64k
+
+Timeout values alone cannot establish service reliability because a timeout is a limit or a single observed duration, not evidence that a request succeeded. A record may show a timeout_ms value while the underlying call failed, was retried, returned an error, or produced an incorrect result. Reliability requires knowing whether the service met its intended outcome under expected load.
+
+Additional measurements are needed: explicit success/failure status, error codes and exception types, request latency distributions such as p50, p95, and p99, availability or SLO attainment, request and error rates, saturation metrics like CPU, memory, queue depth, and connection pool usage, dependency latency and health, retry outcomes, circuit-breaker state, and whether traffic is synthetic or production. Correlating these signals over time, by service, region, and version, helps distinguish transient slowness from systemic failure. Without outcome, volume, and resource context, timeout numbers are only one narrow input, not a reliability verdict. They also do not reveal whether timeouts are increasing, whether users experienced degradation, or whether capacity headroom remains. A reliable assessment should compare observed behavior against agreed service-level objectives and include alerting thresholds, trend analysis, and root-cause context. This makes reliability a multi-dimensional operational question, not a single numeric field.

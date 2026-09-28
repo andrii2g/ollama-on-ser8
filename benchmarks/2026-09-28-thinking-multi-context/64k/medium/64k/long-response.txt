@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-64k
+MIDDLE=P8T3-N6X1-64k
+END=W5H2-J9D4-64k
+
+Timeout values alone cannot establish service reliability because they represent only a single dimension of system behavior: the maximum duration a request was permitted before being abandoned. A request that completes in 120 ms and one that completes at 1,190 ms (just under a 1,200 ms timeout) both "succeed," yet the latter signals degrading performance that may soon tip into failure. Conversely, a request that times out at 500 ms in a system designed for 50 ms responses is a different failure mode than one timing out at 500 ms in a system designed for 600 ms responses.
+
+To build a genuine reliability picture, additional measurements are essential. These include success and error rates broken down by error class (connection refused, DNS failure, 5xx responses, partial data), latency percentiles (p50, p95, p99) to capture tail behavior, throughput under load, and resource saturation metrics such as CPU, memory, disk I/O, and network bandwidth. Dependency health—database query times, cache hit ratios, and downstream service availability—must be tracked alongside the primary service. Retry outcomes, circuit-breaker state transitions, and correlation with deployment or configuration change events further contextualize whether observed timeouts reflect a systemic issue or a transient spike. Only by combining these signals can operators distinguish a healthy system operating near its design envelope from one silently accumulating failures.

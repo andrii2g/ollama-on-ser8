@@ -1,0 +1,13 @@
+{
+  "wall_sec": 28.368976099416614,
+  "time_to_first_token_sec": 28.000238299369812,
+  "minimum_available_gib": 3.558147430419922,
+  "error": null,
+  "prompt_eval_count": 17,
+  "prompt_eval_cached_count": 0,
+  "eval_count": 2,
+  "done_reason": "stop",
+  "prefill_sec": 1.974126,
+  "generation_tok_sec": 5.3628648423988095,
+  "load_sec": 26.002237
+}

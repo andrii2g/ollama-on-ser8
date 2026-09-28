@@ -1,0 +1,27 @@
+{
+  "wall_sec": 1144.0955469999462,
+  "time_to_first_token_sec": 1099.5400184998289,
+  "minimum_available_gib": 21.83127212524414,
+  "maximum_gpu_temperature_c": 93.0,
+  "error": null,
+  "first_thinking_token_sec": 552.4817388001829,
+  "thinking_character_count": 12297,
+  "thinking_chunk_count": 3332,
+  "pause_count": 0,
+  "paused_sec": 0,
+  "timings_include_cooling_pauses": true,
+  "prompt_eval_count": 27004,
+  "prompt_eval_cached_count": 0,
+  "eval_count": 3729,
+  "done_reason": "stop",
+  "prefill_sec": 552.351518,
+  "generation_tok_sec": 6.303439461853618,
+  "load_sec": 0.0055477,
+  "retrieval": {
+    "BEGIN": true,
+    "MIDDLE": true,
+    "END": true
+  },
+  "near_context_target": true,
+  "input_plus_output_within_context": true
+}

@@ -1,0 +1,8 @@
+{
+  "submitted_tokens_from_server_log": 115451,
+  "last_logged_processed_tokens": 37888,
+  "processed_fraction": 0.32817385730742915,
+  "status": "cancelled_at_temperature_limit",
+  "retrieval_status": "not_evaluated_no_generated_response",
+  "scheduled_pauses": 0
+}

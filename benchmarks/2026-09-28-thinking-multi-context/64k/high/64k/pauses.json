@@ -1,0 +1,10 @@
+{
+  "runner_pid": 4396,
+  "paused": false,
+  "pauses_disabled": false,
+  "work_seconds": 0,
+  "rest_seconds": 60,
+  "pause_at_c": 95.0,
+  "resume_below_c": 80.0,
+  "events": []
+}

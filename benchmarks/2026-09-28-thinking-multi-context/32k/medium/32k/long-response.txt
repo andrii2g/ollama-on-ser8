@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-32k
+MIDDLE=P8T3-N6X1-32k
+END=W5H2-J9D4-32k
+
+Timeout values alone cannot establish service reliability because they represent only a single threshold: the maximum duration a request is permitted before being abandoned. A request that completes in 1,200 ms against a 2,000 ms timeout is technically "successful," yet it may still degrade user experience or violate an SLA. Conversely, a request that hits the timeout limit might have been on the verge of completing successfully. The timeout field tells you nothing about whether the response was correct, whether data integrity was preserved, or whether downstream dependencies were healthy.
+
+To build a genuine reliability picture, additional measurements are essential. These include error and success rates over defined windows, full latency distributions (p50, p95, p99) rather than a single cutoff, sustained throughput under load, and availability percentages. Resource utilization metrics—CPU, memory, disk I/O, and network saturation—reveal whether a service is operating near its capacity ceiling. Dependency health checks, circuit-breaker states, retry amplification counts, and correlation with actual user-facing outcomes (page load times, transaction completion) all contribute context that a bare timeout number cannot provide. Without these complementary signals, a timeout value is merely a boundary condition, not an indicator of whether the service is dependable.

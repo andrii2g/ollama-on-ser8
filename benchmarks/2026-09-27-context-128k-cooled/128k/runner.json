@@ -1,0 +1,4 @@
+{
+  "command_line": "%USERPROFILE%\\AppData\\Local\\Programs\\Ollama\\lib\\ollama\\llama-server.exe --model %USERPROFILE%\\.ollama\\models\\blobs\\sha256-f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d --port 52637 --host 127.0.0.1 --no-webui --offline -c 131072 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj %USERPROFILE%\\.ollama\\models\\blobs\\sha256-ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e --spec-type draft-mtp --spec-draft-n-max 2 --spec-draft-backend-sampling --cache-type-k f16 --cache-type-v f16 --flash-attn auto -b 256 -ub 256 -t 6 --context-shift --keep 4",
+  "observed_utc": "2026-09-27T15:04:53.1003488Z"
+}

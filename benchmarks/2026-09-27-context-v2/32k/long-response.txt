@@ -1,0 +1,7 @@
+BEGIN=R7M4-K2V9-32k
+MIDDLE=P8T3-N6X1-32k
+END=W5H2-J9D4-32k
+
+Timeout values alone are insufficient to establish service reliability because they only define the maximum duration a client will wait for a response before aborting the request. A high timeout does not guarantee that a service is fast, stable, or available; it merely indicates the patience level of the caller. For instance, a service could consistently respond in 100ms with a 5000ms timeout, or it could consistently hang until the timeout expires. In both scenarios, the timeout configuration remains identical, yet the operational reality is vastly different.
+
+To accurately assess reliability, additional metrics are required. First, latency distributions, such as the 95th and 99th percentiles, provide insight into typical performance and tail latency, revealing whether slow responses are rare or common. Second, error rates, including HTTP 5xx codes and connection failures, directly measure the frequency of service disruptions. Third, availability percentages, calculated over specific time windows, quantify the proportion of time the service is operational. Finally, throughput metrics, such as requests per second, help

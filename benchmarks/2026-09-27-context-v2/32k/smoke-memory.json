@@ -1,0 +1,27 @@
+[
+  {
+    "elapsed_sec": 0.0,
+    "available_gib": 20.689136505126953,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 5.01,
+    "available_gib": 7.612663269042969,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 10.02,
+    "available_gib": 6.9707794189453125,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 15.03,
+    "available_gib": 6.850067138671875,
+    "total_gib": 59.76161193847656
+  },
+  {
+    "elapsed_sec": 20.03,
+    "available_gib": 5.2216033935546875,
+    "total_gib": 59.76161193847656
+  }
+]

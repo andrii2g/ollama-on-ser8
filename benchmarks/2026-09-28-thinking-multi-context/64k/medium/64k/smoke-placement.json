@@ -1,0 +1,23 @@
+{
+  "models": [
+    {
+      "name": "ser8-qwen38:64k",
+      "model": "ser8-qwen38:64k",
+      "size": 17155143759,
+      "digest": "0bc65b5c45ffe6e060822086324ea48b554ecea7b4cfdb7c412fceb7206659c6",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "27.3B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-09-28T03:17:50.5359734+03:00",
+      "size_vram": 17155143759,
+      "context_length": 65536
+    }
+  ]
+}
