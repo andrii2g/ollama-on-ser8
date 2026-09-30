@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+<title id="title">Time to first final-answer token by context and thinking effort</title>
+<desc id="desc">Grouped bars compare minutes until the model began its final answer, after thinking, at 16K, 32K, 64K, and 128K.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172033}.title{font-size:25px;font-weight:700}.axis{font-size:15px}.label{font-size:15px;font-weight:600}.value{font-size:14px;font-weight:600}.legend{font-size:15px}</style>
+<text x="100" y="38" class="title">Time to first final-answer token by context and thinking effort</text>
+<text x="100" y="62" class="axis">Minutes • lower is faster</text>
+<line x1="100" y1="388.0" x2="925" y2="388.0" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="393.0" text-anchor="end" class="axis">0</text>
+<line x1="100" y1="351.4" x2="925" y2="351.4" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="356.4" text-anchor="end" class="axis">10</text>
+<line x1="100" y1="314.8" x2="925" y2="314.8" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="319.8" text-anchor="end" class="axis">20</text>
+<line x1="100" y1="278.1" x2="925" y2="278.1" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="283.1" text-anchor="end" class="axis">30</text>
+<line x1="100" y1="241.5" x2="925" y2="241.5" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="246.5" text-anchor="end" class="axis">40</text>
+<line x1="100" y1="204.9" x2="925" y2="204.9" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="209.9" text-anchor="end" class="axis">50</text>
+<line x1="100" y1="168.2" x2="925" y2="168.2" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="173.2" text-anchor="end" class="axis">60</text>
+<line x1="100" y1="131.6" x2="925" y2="131.6" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="136.6" text-anchor="end" class="axis">70</text>
+<line x1="100" y1="95.0" x2="925" y2="95.0" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="100.0" text-anchor="end" class="axis">80</text>
+<rect x="120.1" y="356.0" width="76" height="32.0" rx="4" fill="#2563eb"/>
+<text x="158.1" y="348.0" text-anchor="middle" class="value">8.7</text>
+<rect x="210.1" y="339.1" width="76" height="48.9" rx="4" fill="#f97316"/>
+<text x="248.1" y="331.1" text-anchor="middle" class="value">13.4</text>
+<text x="203.1" y="418" text-anchor="middle" class="label">16K</text>
+<rect x="326.4" y="350.6" width="76" height="37.4" rx="4" fill="#2563eb"/>
+<text x="364.4" y="342.6" text-anchor="middle" class="value">10.2</text>
+<rect x="416.4" y="320.9" width="76" height="67.1" rx="4" fill="#f97316"/>
+<text x="454.4" y="312.9" text-anchor="middle" class="value">18.3</text>
+<text x="409.4" y="418" text-anchor="middle" class="label">32K</text>
+<rect x="532.6" y="300.7" width="76" height="87.3" rx="4" fill="#2563eb"/>
+<text x="570.6" y="292.7" text-anchor="middle" class="value">23.8</text>
+<rect x="622.6" y="284.4" width="76" height="103.6" rx="4" fill="#f97316"/>
+<text x="660.6" y="276.4" text-anchor="middle" class="value">28.3</text>
+<text x="615.6" y="418" text-anchor="middle" class="label">64K</text>
+<rect x="738.9" y="161.6" width="76" height="226.4" rx="4" fill="#2563eb"/>
+<text x="776.9" y="153.6" text-anchor="middle" class="value">61.8</text>
+<rect x="828.9" y="120.9" width="76" height="267.1" rx="4" fill="#f97316"/>
+<text x="866.9" y="112.9" text-anchor="middle" class="value">72.9</text>
+<text x="821.9" y="418" text-anchor="middle" class="label">128K</text>
+<rect x="412.5" y="431" width="18" height="18" rx="3" fill="#2563eb"/>
+<text x="438.5" y="445" class="legend">Medium</text>
+<rect x="557.5" y="431" width="18" height="18" rx="3" fill="#f97316"/>
+<text x="583.5" y="445" class="legend">High</text>
+</svg>

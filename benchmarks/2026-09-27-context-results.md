@@ -137,5 +137,5 @@ must already be installed; the harness does not configure the server. The
 [profile and guard tests](../tests/) run without starting a GPU workload.
 
 For optional in-request pauses and the `NO_PAUSES` runtime toggle, see the
-[benchmark instructions](../README.md#validation-status). The completed 64K evidence
+[benchmark instructions](../BENCHMARKING.md). The completed 64K evidence
 records its actual command settings and the mid-run override separately.

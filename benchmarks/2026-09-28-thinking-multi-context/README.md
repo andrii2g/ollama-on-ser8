@@ -2,13 +2,11 @@
 
 Eight long requests compared Ollama thinking effort `medium` and `high` at 16K, 32K, 64K and 128K context on the Beelink SER8 (Ryzen 7 8845HS, Radeon 780M, 64 GB RAM). The pinned `qwen3.8:27b-mtp-q4_K_M` model ran on Ollama 0.34.2 with Vulkan, MTP draft 2, six CPU threads, batch 256, f16 KV cache, automatic Flash Attention, one request and one loaded model.
 
-## Method
+## Latency charts
 
-Each context size used one synthetic long-context retrieval prompt containing distinct codes near its beginning, middle and end. The identical request prompt was used for medium and high at each size; only the `think` setting changed. Prompt lengths were scaled to preserve room for generated thinking and the final answer: 304 records at 16K, 720 at 32K, 1,505 at 64K and 3,000 at 128K. Ollama reported about 11.4K, 27.0K, 56.5K and 113.9K prompt tokens respectively. The same 4,096-token output cap applied to the combined thinking and final answer.
+![Total request duration by context and thinking effort](charts/total-duration.svg)
 
-The runner sampled GPU temperature and whole-system available RAM every five seconds. Scheduled rests were disabled. At 95 C it would suspend the active Ollama runner for at least 60 seconds and resume below 80 C, preserving the in-progress request. No run reached 95 C, so no cooling pauses were needed. Peak sampled GPU temperature was 93 C. The GPU uses shared system memory; the RAM column reports available system RAM, not dedicated GPU VRAM.
-
-The test harness discards reasoning text and saves only timing and thinking character/chunk counts. It records the final answer, which contains only the synthetic task response. The benchmark measures latency, resource use and retrieval for this one task; it does not establish general reasoning quality or code correctness.
+![Time to first final-answer token by context and thinking effort](charts/first-answer.svg)
 
 ## Results
 
@@ -29,4 +27,4 @@ All eight runs returned the beginning, middle and end codes. The 16K high run us
 
 ## Evidence
 
-`summary.json` contains aggregate settings and metrics. Each context/effort folder contains request, response, result, placement, memory, temperature and pause records. Stream files omit the model's thinking text. `16k/high` shows the capped response; every `pauses.json` records no pause events.
+`summary.json` contains aggregate settings and metrics. Each context/effort folder contains request, response, result, placement, memory, temperature and pause records. Stream files omit the model's thinking text. `16k/high` shows the capped response; every `pauses.json` records no pause events. Reproduction commands and run controls are in the repository [benchmarking guide](../../BENCHMARKING.md).

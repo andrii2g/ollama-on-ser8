@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+<title id="title">Total request duration by context and thinking effort</title>
+<desc id="desc">Grouped bars compare elapsed minutes for medium and high thinking at 16K, 32K, 64K, and 128K. High is slower in all tested contexts.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172033}.title{font-size:25px;font-weight:700}.axis{font-size:15px}.label{font-size:15px;font-weight:600}.value{font-size:14px;font-weight:600}.legend{font-size:15px}</style>
+<text x="100" y="38" class="title">Total request duration by context and thinking effort</text>
+<text x="100" y="62" class="axis">Minutes • lower is faster</text>
+<line x1="100" y1="388.0" x2="925" y2="388.0" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="393.0" text-anchor="end" class="axis">0</text>
+<line x1="100" y1="351.4" x2="925" y2="351.4" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="356.4" text-anchor="end" class="axis">10</text>
+<line x1="100" y1="314.8" x2="925" y2="314.8" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="319.8" text-anchor="end" class="axis">20</text>
+<line x1="100" y1="278.1" x2="925" y2="278.1" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="283.1" text-anchor="end" class="axis">30</text>
+<line x1="100" y1="241.5" x2="925" y2="241.5" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="246.5" text-anchor="end" class="axis">40</text>
+<line x1="100" y1="204.9" x2="925" y2="204.9" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="209.9" text-anchor="end" class="axis">50</text>
+<line x1="100" y1="168.2" x2="925" y2="168.2" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="173.2" text-anchor="end" class="axis">60</text>
+<line x1="100" y1="131.6" x2="925" y2="131.6" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="136.6" text-anchor="end" class="axis">70</text>
+<line x1="100" y1="95.0" x2="925" y2="95.0" stroke="#dbe2ea" stroke-width="1"/>
+<text x="86" y="100.0" text-anchor="end" class="axis">80</text>
+<rect x="120.1" y="353.6" width="76" height="34.4" rx="4" fill="#2563eb"/>
+<text x="158.1" y="345.6" text-anchor="middle" class="value">9.4</text>
+<rect x="210.1" y="338.5" width="76" height="49.5" rx="4" fill="#f97316"/>
+<text x="248.1" y="330.5" text-anchor="middle" class="value">13.5</text>
+<text x="203.1" y="418" text-anchor="middle" class="label">16K</text>
+<rect x="326.4" y="347.3" width="76" height="40.7" rx="4" fill="#2563eb"/>
+<text x="364.4" y="339.3" text-anchor="middle" class="value">11.1</text>
+<rect x="416.4" y="318.2" width="76" height="69.8" rx="4" fill="#f97316"/>
+<text x="454.4" y="310.2" text-anchor="middle" class="value">19.1</text>
+<text x="409.4" y="418" text-anchor="middle" class="label">32K</text>
+<rect x="532.6" y="296.1" width="76" height="91.9" rx="4" fill="#2563eb"/>
+<text x="570.6" y="288.1" text-anchor="middle" class="value">25.1</text>
+<rect x="622.6" y="281.3" width="76" height="106.7" rx="4" fill="#f97316"/>
+<text x="660.6" y="273.3" text-anchor="middle" class="value">29.1</text>
+<text x="615.6" y="418" text-anchor="middle" class="label">64K</text>
+<rect x="738.9" y="156.1" width="76" height="231.9" rx="4" fill="#2563eb"/>
+<text x="776.9" y="148.1" text-anchor="middle" class="value">63.3</text>
+<rect x="828.9" y="116.9" width="76" height="271.1" rx="4" fill="#f97316"/>
+<text x="866.9" y="108.9" text-anchor="middle" class="value">74.0</text>
+<text x="821.9" y="418" text-anchor="middle" class="label">128K</text>
+<rect x="412.5" y="431" width="18" height="18" rx="3" fill="#2563eb"/>
+<text x="438.5" y="445" class="legend">Medium</text>
+<rect x="557.5" y="431" width="18" height="18" rx="3" fill="#f97316"/>
+<text x="583.5" y="445" class="legend">High</text>
+</svg>

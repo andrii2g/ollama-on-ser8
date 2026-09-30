@@ -1,54 +1,34 @@
 # Qwen3.8 on a SER8 with 64 GB RAM
 
-Recommended starting configuration for a Beelink SER8 with **Ryzen 7 8845HS,
-Radeon 780M and 2 x 32 GB DDR5-5600**: Ollama, **27.3B Q4_K_M weights with MTP**,
-Vulkan acceleration, two everyday context profiles, and three opt-in large-context profiles.
+A practical Ollama setup for the Beelink SER8 with Ryzen 7 8845HS, Radeon 780M and 64 GB DDR5 memory. It includes 8K and 16K everyday profiles and opt-in 32K, 64K and 128K profiles for larger documents and codebases.
 
-**Evidence:** Windows benchmark artifacts from 2026-09-26 are included in
-[the benchmark report](benchmarks/2026-09-26/README.md): measurements, settings,
-prompts and saved API responses from Ollama 0.34.2. The test machine was the
-Windows 11 SER8 described above. The [2026-09-27 context tests](benchmarks/2026-09-27-context-results.md)
-add completed 32K, 64K and 128K results, with earlier temperature-limited attempts preserved.
-The Linux setup below is an adaptation, not a measured Linux performance claim.
-Linux drivers, backend builds, power limits and available RAM can change results.
-This guide targets native Linux; WSL and Docker GPU setup are outside its scope.
+**Summary:** Use 8K for focused interactive work, and 16K when a prompt needs extra room. Use 32K for multi-file coding or document review. Reserve 64K and 128K for material that will not fit smaller profiles: near-limit requests in the latest tests took 25–29 minutes at 64K and 63–74 minutes at 128K. Shorter everyday prompts were not measured in this matrix. Every synthetic retrieval check passed, but these tests do not establish general reasoning or coding quality.
+
+The benchmark machine was Windows 11; this setup guide targets native Linux. Linux performance has not been measured here, and driver, Ollama backend, power and memory differences can change results. WSL and Docker GPU setup are outside this guide. See [benchmark run instructions](BENCHMARKING.md) for reproducibility and run controls.
 
 ## Reported benchmark configuration
 
-| Setting | Recommendation |
+| Setting | Tested configuration |
 |---|---|
-| Model | `qwen3.8:27b-mtp-q4_K_M` |
-| GPU backend | Vulkan, with full reported GPU placement |
+| Model | `qwen3.8:27b-mtp-q4_K_M` (27.3B, pinned weights) |
+| GPU backend | Vulkan, full reported placement on Radeon 780M |
 | MTP draft tokens | 2 |
 | CPU threads / batch | 6 / 256 |
 | KV cache / Flash Attention | f16 / automatic |
 | Concurrent requests / loaded models | 1 / 1 |
-| Thinking / keep-alive | Off for benchmark-like latency / 15 minutes |
+| Profile sampling | temperature 0, top-k 20, top-p 0.95, min-p 0 |
 
-On three 512-token tasks, MTP draft 2 generated at **7.16-8.11 tokens/sec**,
-compared with **3.77-4.10** with draft 0. These runs hit their output-token limits;
-they measure throughput, not completed-task quality. Long-context Ollama runs
-were around **6.5 tokens/sec**. Batch 128 and 256 were close in the saved runs;
-larger batches offered no improvement. The tested IQ4_XS file generated slower
-than Q4_K_M in every compared workload.
-
-Long input still costs time: the dedicated context test took **57.07 seconds**
-for 3,395 uncached input tokens and **149.46 seconds** for 8,583. A separate 16K
-runtime comparison recorded **156.26 seconds** for the latter input. The 16K
-profile was tested with 8,583 input tokens, not a full 16K input. Small retrieval
-checks passed; these are not general accuracy or code-correctness benchmarks.
-See the [report and source data](benchmarks/2026-09-26/README.md) for per-case
-results, cache differences, and limits on these comparisons.
+Earlier 512-token comparisons measured 7.16–8.11 tokens/sec with MTP draft 2 versus 3.77–4.10 with draft 0; those requests hit their output limits. The dedicated 2026-09-26 context test measured 57.07 seconds for 3,395 uncached prompt tokens and 149.46 seconds for 8,583. These are performance observations, not answer-quality comparisons. See the [original report](benchmarks/2026-09-26/README.md) for source data and qualifications.
 
 ## The profiles
 
-| Profile | Context budget | Use |
+| Profile | Context budget | Recommended tasks |
 |---|---:|---|
-| `ser8-qwen38:8k` | 8,192 tokens | Default: chat and coding |
-| `ser8-qwen38:16k` | 16,384 tokens | Longer documents and conversations |
-| `ser8-qwen38:32k` | 32,768 tokens | Experimental: large documents |
-| `ser8-qwen38:64k` | 65,536 tokens | Experimental: extended context |
-| `ser8-qwen38:128k` | 131,072 tokens | Experimental: very large context |
+| `ser8-qwen38:8k` | 8,192 tokens | Interactive chat, focused code edits, short documentation tasks |
+| `ser8-qwen38:16k` | 16,384 tokens | A few files, a longer specification, focused documentation drafting |
+| `ser8-qwen38:32k` | 32,768 tokens | Multi-file coding, repository questions, comparing several documents |
+| `ser8-qwen38:64k` | 65,536 tokens | Large codebase or document set when 32K cannot hold the needed context |
+| `ser8-qwen38:128k` | 131,072 tokens | One-off analysis of a very large corpus that cannot be split or retrieved selectively |
 
 All profiles use `num_thread=6`, `num_batch=256`, `draft_num_predict=2` and
 `temperature=0`. Temperature 0 matches the benchmarks; it is a sampling choice,
@@ -154,88 +134,78 @@ Context includes the prompt, conversation history, and generated output. A model
 loading successfully does not establish that near-limit prompts are fast or that
 all input is retained. Keep output headroom and check server logs for truncation.
 
-### Large-context results (Windows, 2026-09-27)
+## Benchmark results
 
-**32K, 64K and 128K completed the long-context retrieval test successfully.**
-Separate profiles were created and their requested context allocations verified.
-All three runs used the pinned Qwen3.8 27.3B Q4_K_M model with MTP draft 2, six threads,
-batch 256, f16 KV cache and automatic Flash Attention on the Radeon 780M.
+These Windows measurements used the pinned 27.3B Q4_K_M model, Vulkan/MTP draft 2, six threads, batch 256, f16 KV cache and one request at a time. For profiles, prompts, raw evidence and run instructions, see the [benchmarking guide and linked reports](BENCHMARKING.md).
 
-| Measurement | 32K | 64K | 128K |
-|---|---:|---:|---:|
-| Allocated context | 32,768 tokens | 65,536 tokens | 131,072 tokens |
-| Input processed | 28,461 tokens | 57,060 tokens | 115,451 tokens |
-| Cached input | 0 tokens | 0 tokens | 0 tokens |
-| Beginning / middle / end retrieval | All 3 correct | All 3 correct | All 3 correct |
-| Generated output | 256 tokens | 256 tokens | 256 tokens |
-| Prompt processing (prefill) | 13.85 min | 29.30 min, including cooling rests | 63.64 min |
-| Total request time | 14.66 min | 30.22 min, including cooling rests | 64.79 min |
-| Generation speed | 5.32 tokens/sec | 4.71 tokens/sec | 3.75 tokens/sec |
-| Sampled peak GPU temperature | Not recorded | 93 C | 93 C |
+### 32K–128K retrieval results (2026-09-27)
 
-The prompts used about 87–88% of the allocated context. Input plus output stayed
-within the context budget; none of the completed runs truncated its input. All answers
-returned all three verification codes before reaching the 256-token output cap.
-These are single synthetic retrieval checks, not proof of general reasoning or
-coding accuracy across long documents.
+![Total elapsed time for completed thinking-off context runs](benchmarks/2026-09-27-context-total.svg)
 
-The 32K run completed before temperature monitoring was added. The 64K run included
-three two-minute rests early in prefill (approximately **6.05 minutes total**,
-including a later brief suspension). Further rests were then disabled, and the
-same request continued to completion. Generation occurred without pauses.
-The successful 128K retry was configured to pause at 95 C for at least one minute
-and resume below 80 C. Its peak sampled temperature was 93 C, so **no pauses
-actually occurred**. Minimum sampled available system RAM was 14.06 GiB, and the
-model unloaded normally after completion. This result does not explain the lower
-temperature versus the earlier attempt or establish repeatability.
-Different cooling policies and background workloads prevent a controlled speed
-comparison. The observed 93 C peak does not establish a safe sustained temperature.
+All three completed requests retrieved the beginning, middle and end codes. The test used thinking off and a 256-token output cap.
 
-The practical result is that all three profiles can handle these near-limit inputs,
-but their long first-response waits make these examples unsuitable for interactive
-use when low latency matters. Use the larger profiles when the additional context
-is worth that delay; keep 8K/16K as the everyday starting point.
+| Profile | Allocated context | Prompt tokens | First token | Total request | Generation speed | Result |
+|---|---:|---:|---:|---:|---:|---|
+| 32K | 32,768 | 28,461 | 13.85 min | 14.66 min | 5.32 tok/s | All codes correct; output cap reached |
+| 64K | 65,536 | 57,060 | 29.30 min | 30.22 min | 4.71 tok/s | All codes correct; early cooling rests included |
+| 128K | 131,072 | 115,451 | 63.64 min | 64.79 min | 3.75 tok/s | All codes correct; no cooling pause triggered |
 
-Earlier guarded 64K and 128K attempts stopped at the configured 85 C threshold
-despite resting before the requests. Both loaded with full reported GPU placement.
-An earlier 128K continuous retry reached its 95 C cancellation threshold after
-13.78 minutes, processing 37,888 tokens without generating an answer. It remains
-in the evidence as an incomplete attempt, separate from the successful retry.
-These thresholds are test settings, not hardware temperature ratings.
+The 64K timing includes early rests and is not directly comparable with the other runs. These near-limit prompts take substantially longer than smaller interactive prompts; the matrix did not benchmark typical short chats. These are single synthetic retrieval cases; they do not establish broad accuracy, safe sustained temperatures or repeatability. See the [detailed 2026-09-27 report](benchmarks/2026-09-27-context-results.md) for cancelled attempts and thermal-policy evidence.
 
-See the [full report and evidence](benchmarks/2026-09-27-context-results.md).
-Keep 8K/16K for everyday use; the larger profiles remain opt-in. Timed breaks
-between tests do not cap temperature during a single long request. The harness
-samples temperature and offers either cancellation or optional Windows runner
-pauses, with a runtime toggle for continuing without cooling rests.
+### Thinking effort and latency (2026-09-28)
 
-### Thinking effort comparison
+Both `medium` and `high` returned all three codes at every tested context. The charts show total request time and time until the first final-answer token; the latter includes prefill and any preceding thinking.
 
-A second benchmark compared Ollama thinking effort `medium` and `high` at 16K,
-32K, 64K and 128K. Both efforts returned all three synthetic retrieval codes in
-each context. The 16K high run reached the shared 4,096-token thinking-plus-answer
-cap: all codes were present, but its explanatory answer was cut off. The other
-seven requests ended normally. These tests compare latency and resource use for
-one retrieval task, not overall reasoning quality.
+![Total request duration by context and thinking effort](benchmarks/2026-09-28-thinking-multi-context/charts/total-duration.svg)
 
-| Context | Effort | Prompt tokens | First thinking | First answer | Total | Combined output tok/s | Peak GPU | Min. available RAM | Pauses |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 16k | medium | 11,401 | 3m 28s | 8m 45s | 9m 24s | 7.47 | 91 C | 19.37 GiB | 0 |
-| 16k | high | 11,443 | 3m 28s | 13m 22s | 13m 31s | 6.80 | 91 C | 22.49 GiB | 0 |
-| 32k | medium | 26,962 | 9m 14s | 10m 12s | 11m 07s | 5.67 | 93 C | 21.65 GiB | 0 |
-| 32k | high | 27,004 | 9m 12s | 18m 20s | 19m 04s | 6.30 | 93 C | 21.83 GiB | 0 |
-| 64k | medium | 56,481 | 22m 44s | 23m 51s | 25m 06s | 4.80 | 93 C | 19.39 GiB | 0 |
-| 64k | high | 56,523 | 22m 36s | 28m 17s | 29m 09s | 5.24 | 93 C | 19.35 GiB | 0 |
-| 128k | medium | 113,910 | 60m 28s | 61m 49s | 63m 19s | 3.67 | 93 C | 14.15 GiB | 0 |
-| 128k | high | 113,952 | 60m 42s | 72m 56s | 74m 01s | 4.16 | 93 C | 14.12 GiB | 0 |
+![Time to first final-answer token by context and thinking effort](benchmarks/2026-09-28-thinking-multi-context/charts/first-answer.svg)
 
-The same prompt was used for medium and high within each context. Thinking and
-answer shared a 4,096-token output budget. The run was configured to pause the
-active runner at 95 C for at least 60 seconds and resume below 80 C; the measured
-peak was 93 C, so no pauses occurred. See the [full report and per-run evidence](benchmarks/2026-09-28-thinking-multi-context/README.md)
-for input sizes, method and finish reasons. Thinking traces are discarded; only
-character counts and timing are retained. These single-task results do not
-measure broad reasoning or coding quality.
+| Context | Effort | Prompt tokens | First thinking | First answer | Total | Combined output tok/s | Finish | Peak GPU | Min. available RAM |
+|---|---|---:|---:|---:|---:|---:|---|---:|---:|
+| 16K | medium | 11,401 | 3m 28s | 8m 45s | 9m 24s | 7.47 | stop | 91 C | 19.37 GiB |
+| 16K | high | 11,443 | 3m 28s | 13m 22s | 13m 31s | 6.80 | length* | 91 C | 22.49 GiB |
+| 32K | medium | 26,962 | 9m 14s | 10m 12s | 11m 07s | 5.67 | stop | 93 C | 21.65 GiB |
+| 32K | high | 27,004 | 9m 12s | 18m 20s | 19m 04s | 6.30 | stop | 93 C | 21.83 GiB |
+| 64K | medium | 56,481 | 22m 44s | 23m 51s | 25m 06s | 4.80 | stop | 93 C | 19.39 GiB |
+| 64K | high | 56,523 | 22m 36s | 28m 17s | 29m 09s | 5.24 | stop | 93 C | 19.35 GiB |
+| 128K | medium | 113,910 | 60m 28s | 61m 49s | 63m 19s | 3.67 | stop | 93 C | 14.15 GiB |
+| 128K | high | 113,952 | 60m 42s | 72m 56s | 74m 01s | 4.16 | stop | 93 C | 14.12 GiB |
+
+*The 16K high request reached its 4,096-token shared thinking-and-answer cap. It included all three codes, but explanatory text was cut off. The other seven requests ended normally. No request reached the configured 95 C cooling threshold, so there were no pauses. Minimum available RAM is whole-system memory; the integrated GPU uses shared RAM.
+
+These timings support using the smallest profile that fits the work. Higher thinking effort did not improve the exact retrieval pass result and delayed the first final answer, especially at 32K–128K. That is a latency observation, not evidence that high effort is worse on difficult reasoning tasks. See the [full results and per-run evidence](benchmarks/2026-09-28-thinking-multi-context/README.md).
+
+## Profile and Ollama recommendations
+
+The task mapping below is practical guidance, not a measured quality ranking. Start with medium thinking for work that needs analysis; disable thinking for mechanical edits or extraction where latency matters. Raise the context only when the needed conversation, files or documents do not fit. Larger context carries a substantial first-answer cost on this machine.
+
+| Work | Suggested profile | Thinking | Starting `num_predict` | Why |
+|---|---|---|---:|---|
+| Chat, focused code change, short documentation edit | 8K | Off for direct edits; medium for debugging or explanation | 1,024–2,048 | Keeps the prompt small and interactive |
+| Review or change spanning a few files; draft/revise one long document | 16K | Medium | 2,048 | Adds working room for a modest patch or document |
+| Repository-level coding, multi-document comparison, technical writing from several sources | 32K | Medium by default; high for unusually complex analysis | 4,096 | Near-limit synthetic runs took 11–19 minutes |
+| Large monorepo or extensive documentation set | 64K | Medium first; high if extra analysis is warranted | 4,096+ | Use only when the material will not fit 32K; near-limit runs took 25–29 minutes |
+| Full-corpus review or very long specification that cannot be split | 128K | Medium first; high only when the work warrants an hour-plus wait | 4,096+ | Near-limit runs took about 63 minutes at medium and 74 at high |
+
+The supplied profiles already set `num_ctx`, `num_thread=6`, `num_batch=256`, `draft_num_predict=2` and sampling defaults (`temperature=0`, `top_k=20`, `top_p=0.95`). Select the profile that fits the input; set thinking and output budget per request. Example for a multi-file coding task:
+
+```bash
+ollama run ser8-qwen38:32k --think=medium --keepalive 15m
+```
+
+Equivalent API request fields (the profile supplies its context size):
+
+```json
+{
+  "model": "ser8-qwen38:32k",
+  "think": "medium",
+  "stream": true,
+  "keep_alive": "15m",
+  "options": { "temperature": 0, "num_predict": 2048 }
+}
+```
+
+`num_predict` limits the generated thinking and answer together in the tested Ollama version. The table's values are starting points, not measured quality settings. Increase the budget for a long code patch or detailed report, and reserve room inside `num_ctx` for the final answer; the benchmark's 4,096 cap truncated the 16K high answer. For a high-effort request, set `--think=high` in the CLI or change the API `think` value to `high`. The chat helper intentionally starts with thinking off; pass a request-level thinking value when needed. For benchmark run options and cooling behavior, see [BENCHMARKING.md](BENCHMARKING.md).
 
 ## Switch profiles
 
@@ -288,93 +258,9 @@ resolved before treating this as the tested setup. The 780M uses shared system R
 reported GPU allocation is not dedicated VRAM. Close heavy apps and avoid duplicate
 servers or runners. Keep one server and one model loaded during validation.
 
-## Validation status
+## Verification status
 
-Profile-selection and context-verification regression tests run without a server:
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-The large-context benchmark harness saves requests, responses, placement and
-whole-system available-memory samples. It requires an idle local server with the
-requested profiles already created and a new output directory:
-
-```bash
-python3 scripts/benchmark-context.py --output benchmarks/my-context-run
-```
-
-It runs 32K, 64K and 128K sequentially, with one smoke request and one long request
-per profile, then unloads each model. `--profiles 32k` selects one profile. Before
-each profile it rests for at least five minutes and waits for GPU temperature
-below 70 C. Every five seconds it samples temperature; reaching 85 C cancels the
-request and stops the sequence. These are conservative benchmark limits, not
-hardware maximum ratings. Temperature monitoring uses the Windows graphics API
-or Linux amdgpu hwmon; unavailable readings prevent an unmonitored run.
-
-Use `--cooldown-seconds`, `--resume-below`, and `--max-gpu-temp` to adjust the
-policy. Each request has a 90-minute limit by default (`--max-seconds`); available
-RAM below 2 GiB for 30 seconds also cancels it. Creating a file named `STOP` in
-the run's output directory requests cancellation. Streamed response events are
-saved as they arrive. A cancelled request cannot resume mid-prefill and is not a
-completed benchmark. By default, timed breaks occur between profiles; a long
-individual request runs continuously unless a limit is reached.
-
-On Windows, optional **in-request cooling pauses** preserve the active request.
-Download [Microsoft Sysinternals PsSuspend](https://learn.microsoft.com/en-us/sysinternals/downloads/pssuspend)
-and supply the path to `pssuspend64.exe` (the executable is not included here):
-
-```powershell
-python scripts/benchmark-context.py --profiles 64k --output benchmarks/my-paused-64k `
-  --pause-tool C:\Tools\PsTools\pssuspend64.exe --work-seconds 300 --rest-seconds 120
-```
-
-This mode suspends only the matching single-model Ollama runner for two minutes
-after five minutes of work, or sooner at the temperature threshold. It resumes
-once the rest has elapsed and the GPU is below 70 C. Memory stays allocated;
-the request and its processed context are retained. Keep the server dedicated to
-this benchmark while it runs. `pauses.json` records each pause and resume.
-Elapsed times and API timings include these pauses and must not be compared
-directly with continuous-run throughput. Normal cleanup resumes the runner
-before unloading it; if the harness is forcibly killed during a pause, use
-`pssuspend64.exe -r <runner_pid>` with the PID recorded in `pauses.json` to resume
-that runner. Model settings remain unchanged.
-
-For temperature-triggered pauses only, set `--work-seconds 0`. For example,
-`--max-gpu-temp 95 --rest-seconds 60 --resume-below 80` with `--pause-tool`
-pauses the long request at 95 C, waits at least one minute, then resumes below
-80 C. These configurable thresholds describe a test policy, not hardware ratings.
-Without `--pause-tool`, reaching `--max-gpu-temp` cancels the request.
-
-For runs started with the current harness, creating `NO_PAUSES` in the run's
-output directory resumes any cooling pause and disables further pauses within
-one sampling interval, without cancelling the request. Removing the file enables
-pauses again. While disabled, the pause-mode temperature threshold does not stop
-the request; temperature sampling, the time limit and the low-memory guard remain.
-
-
-All four scripts passed Bash syntax checks during the documentation review on
-2026-09-27. Repeat that check from the repository root with:
-
-```bash
-for script in scripts/*.sh; do
-  bash -n "$script" || exit 1
-done
-```
-
-Syntax checks do not execute the scripts or validate Ollama behavior. Earlier
-setup notes reported mocked API/CLI checks, but their harness and results are
-not included here and were not verified during this review. No real Linux SER8
-GPU run has been verified for this repository. Use the runtime checks above to
-validate your installation.
-
-For comparable benchmark results, record the OS, driver and Ollama versions,
-model digest, profile, exact prompt, request options, input/output token counts,
-prompt-evaluation and generation durations, and whether the model and prompt
-cache were warm. Keep the raw responses and repeat each measurement. Saved prompts, settings and responses are linked from the
-[benchmark report](benchmarks/2026-09-26/README.md). The original benchmark
-execution harness is not included; replaying the prompts requires recreating
-the recorded request options and cache conditions.
+Profile-selection and context-verification regression tests run without starting an Ollama server. The Linux setup has not been validated on a Linux SER8 GPU. For benchmark commands, run limits, telemetry and output handling, see [BENCHMARKING.md](BENCHMARKING.md).
 
 For manual serving and undo instructions, see [LINUX-NOTES.md](LINUX-NOTES.md).
 
